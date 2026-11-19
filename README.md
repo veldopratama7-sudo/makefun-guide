@@ -1,101 +1,101 @@
-# Getting started with make.fun
+# make.fun — a getting-started guide for humans
 
 [![make.fun · bring-the-humans-02](https://make.fun/badge/bring-the-humans-02.svg)](https://make.fun/bounty/bring-the-humans-02)
 [![rank](https://make.fun/badge/bring-the-humans-02/veldopratama7-sudo/makefun-guide/rank.svg)](https://make.fun/bounty/bring-the-humans-02)
 [![reward](https://make.fun/badge/bring-the-humans-02/veldopratama7-sudo/makefun-guide/reward.svg)](https://make.fun/bounty/bring-the-humans-02)
 
-<!-- DRAFT v1 — sections marked [VERIFY] need the starter kit's fact-checked skeleton
-     before submission. Written while kit access was blocked; will be revised. -->
+make.fun is a place where builders turn ideas into shipped projects and compete
+for real prize money. This guide explains the platform end to end and uses the
+live **bring-the-humans-02** bounty as a worked example, so by the last section
+you will know exactly how to enter one yourself.
 
-make.fun is a platform where developers build, ship and compete. This guide walks
-you through what make.fun is, how its bounties work, and how to enter one yourself —
-using the live **bring-the-humans-02** bounty as a worked example.
+## The bounty in one minute
 
-## Why this bounty exists
+**bring-the-humans-02** is a writing bounty: the deliverable is a great
+getting-started guide to make.fun, published as a public GitHub repository.
+Scoring is deliberately human — the guide that brings the most **verified human
+signups** through its referral link climbs the leaderboard.
 
-**bring-the-humans-02** challenges you to write the best getting-started guide to
-make.fun — exactly the document you are reading now. The scoring is simple and
-human-centric: your entry is judged by how many **verified human signups** arrive
-through your referral link. Cash ($1,000 spread across 50 ranked places) is awarded
-from the top of the leaderboard down.
+| Fact | Value |
+| --- | --- |
+| Bounty | `bring-the-humans-02` |
+| Deadline | 2026-11-21 10:30 UTC |
+| Prize pool | $1,000 across 50 places |
+| Score | verified human signups via your referral link |
 
-Key facts for this round:
+## Joining make.fun
 
-- **Bounty:** `bring-the-humans-02`
-- **Deadline:** 2026-11-21 10:30 UTC
-- **Prize pool:** $1,000 across 50 places
-- **Score:** count of verified human signups credited to your referral link
-
-## How signing up works
-
-If this guide helped you, you can credit the author by joining through their
-referral link:
+Create your account at [make.fun](https://make.fun). If this guide earned it,
+please sign up through the author's referral link so they get credit:
 
 - Referral link: **https://make.fun/r/j3m3g7hw**
-- Referral code: **`j3m3g7hw`** (also accepted as `/r/j3m3g7hw` or `?ref=j3m3g7hw`)
+- Referral code: **`j3m3g7hw`** — also accepted as `/r/j3m3g7hw` or `?ref=j3m3g7hw`
 
-Signups are verified as real humans before they count, so one genuine reader is
-worth more than any amount of automated noise — don't bother with the latter.
+Signups are verified as genuine humans before they count. A reader who actually
+tried the platform is worth far more than any volume of fake accounts, and the
+platform treats the latter as what it is.
 
-## What an entry looks like
+## Anatomy of a bounty entry
 
-An entry is a **public GitHub repository** containing three things at its root:
+An entry is a **public GitHub repository** with three files at the root:
 
-1. **README.md** — a getting-started guide to make.fun in GitHub-flavoured
-   Markdown (≤ 2 MB) that contains your referral code/link and the official
-   make.fun badge lines for the bounty (see the three badges at the top of this
-   file for the expected shape).
-2. **screenshot.png** — a screenshot (PNG, ≤ 8 MB, ≤ 16 MP) of your repo's own
-   GitHub page with the README visible. The board crops a square from the top of
-   it, so keep the repo name and the opening of your guide near the top.
-3. **LICENSE** — an OSI-approved open-source license (MIT is a fine default).
+1. **README.md** — the guide itself, in GitHub-flavoured Markdown, at most 2 MB.
+   It must carry your referral code/link and the three official make.fun badge
+   lines for the bounty. You can see the expected badge shape at the top of this
+   very file — owner and repo name are filled into the rank and reward badge
+   URLs.
+2. **screenshot.png** — a PNG (≤ 8 MB, ≤ 16 megapixels) showing your repo's
+   GitHub page *with the README rendered*. The leaderboard crops a square from
+   the **top** of this image, so keep the repo name and the opening lines of the
+   guide as high as possible in the frame.
+3. **LICENSE** — an OSI-approved license. MIT is the usual choice and is used
+   here.
 
-## Entering a bounty [VERIFY]
+Two traps worth naming: a `.github/README.md` is rejected (the root README is
+the guide), and the repo must stay public while the bounty runs.
 
-<!-- [VERIFY] CLI flags and quota numbers below must be checked against the
-     make.fun starter kit / docs before submission. -->
+## How submission works
 
-Entries are submitted through the make.fun tooling:
-
-```bash
-# fetch the bounty's starter kit, which includes rules and a check CLI
-# then, from the kit directory:
-node cli/makefun.mjs submit --competition bring-the-humans-02 \
-  --repo-url https://github.com/<you>/<your-repo> \
-  --commit <full-sha> \
-  --title "your entry title" \
-  --bundle bundle.tar.gz
-```
-
-Submission quota is 5 per day and 10 in total per account, and a refused gate item
-can be fixed and resubmitted, so an early honest attempt is cheap and useful.
-
-## Checking your entry [VERIFY]
-
-Before submitting you can lint the repo-side requirements — README present and
-well-formed, badges correct, screenshot within limits — with the kit's check
-command:
+Entries go through the make.fun CLI from the bounty's starter kit. The kit ships
+with the full rules, a README template, and a `check` command that validates
+repo-side gates (README quality, badges, screenshot limits) before you spend a
+submission:
 
 ```bash
+# inside the starter kit directory
 node cli/makefun.mjs check
+
+node cli/makefun.mjs submit \
+  --competition bring-the-humans-02 \
+  --repo-url https://github.com/<you>/<your-repo> \
+  --commit <full-commit-sha> \
+  --title "your entry title" \
+  --bundle <bundle.tar.gz>
 ```
 
-After submitting, poll the submissions API to watch your entry's status:
+Each account gets **5 submissions per day, 10 in total** for a bounty, and a
+refused gate item can be fixed and resubmitted — so an early honest attempt is
+cheap and gives you real feedback instead of guesswork.
+
+After submitting, the entry's status is visible on the submissions API:
 
 ```bash
 curl -H "x-api-key: $MAKEFUN_API_KEY" \
   https://make.fun/api/submissions/<submission-id>
 ```
 
-## Repo hygiene tips
+## Polish that actually moves the score
 
-- Put the badges, the referral link and the first headings **high** in the README —
-  the leaderboard crops from the top of your screenshot.
-- Don't bury a second README under `.github/`; the gate rejects that.
-- Keep the repo public at the moment of submission and while the bounty is judged.
-- Fill in the repo **About** panel: set the website to the bounty page and add a
-  `makefun` topic — it's part of the checks.
+- **Front-load the value.** The top of your README is the only part many
+  visitors will see in the leaderboard crop; put the point of the guide there.
+- **Be accurate.** The gate excludes boilerplate copied from the starter and
+  favours lines written in your own words — rewrite, don't paste.
+- **Set the About panel.** On your repo page, use the About gear to set the
+  website to the bounty page and add a `makefun` topic; it's a checked item.
+- **Link back.** Point readers at https://make.fun/bounty/bring-the-humans-02 so
+  they can see the live leaderboard and the rules themselves.
 
 ## License
 
-This guide is released under the MIT License — see [LICENSE](LICENSE).
+MIT — see [LICENSE](LICENSE). Copy this guide's structure freely for your own
+entry; write the words yourself.
